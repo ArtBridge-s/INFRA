@@ -46,7 +46,7 @@ spec:
               done
       containers:
         - name: gateway-app
-          image: imkunyoung/artbridge-gateway/gateway
+          image: gcr.io/artbridge/gateway
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: prod
