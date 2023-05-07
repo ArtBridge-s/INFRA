@@ -25,8 +25,8 @@ logSummary() {
 default() {
     suffix=k8s
     kubectl apply -f registry-${suffix}/
-    kubectl apply -f gateway-${suffix}/
     kubectl apply -f messagebroker-${suffix}/
+    kubectl apply -f gateway-${suffix}/
 
 }
 
