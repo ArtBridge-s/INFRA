@@ -1,0 +1,18 @@
+{
+  "generator-jhipster": {
+    "appsFolders": ["Gateway"],
+    "clusteredDbApps": {},
+    "directoryPath": "C:\\Users\\ur2ku\\OneDrive\\바탕 화면\\WORKSPACE\\[ShareIn]workspace\\artbridge/",
+    "dockerPushCommand": "docker push",
+    "dockerRepositoryName": "gcr.io/artbridge",
+    "ingressDomain": "",
+    "istio": false,
+    "jwtSecretKey": "OWUzN2E4YmE2NWI5YmNhOTM5MGE5MmZhN2YwNzY5ZDhjYzFkN2VjMmVjNGIwY2E1MmVhZGM3YWUwYzRmM2Y1NjhiOWRiYzBiZjZlNGMyMDcyYTdmMzViY2QwNzQzOGI2YjcwNQ==",
+    "kubernetesNamespace": "default",
+    "kubernetesServiceType": "LoadBalancer",
+    "kubernetesStorageClassName": "",
+    "kubernetesUseDynamicStorage": true,
+    "monitoring": "no",
+    "serviceDiscoveryType": "eureka"
+  }
+}
