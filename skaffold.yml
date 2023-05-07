@@ -1,0 +1,12 @@
+apiVersion: skaffold/v1
+kind: Config
+build:
+  artifacts:
+    - image: gcr.io/artbridge/gateway
+      context: C:\Users\ur2ku\OneDrive\바탕 화면\WORKSPACE\[ShareIn]workspace\artbridge/Gateway
+      jib: {}
+  tagPolicy:
+    envTemplate:
+      template: "{{.IMAGE_NAME}}:latest"
+deploy:
+  kustomize: {}
