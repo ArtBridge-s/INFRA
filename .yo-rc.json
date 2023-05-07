@@ -11,7 +11,7 @@
     "kubernetesNamespace": "default",
     "kubernetesServiceType": "LoadBalancer",
     "kubernetesStorageClassName": "",
-    "kubernetesUseDynamicStorage": true,
+    "kubernetesUseDynamicStorage": false,
     "monitoring": "no",
     "serviceDiscoveryType": "eureka"
   }
