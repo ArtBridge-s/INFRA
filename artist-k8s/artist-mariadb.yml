@@ -1,0 +1,68 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: artist-mariadb
+  namespace: default
+  labels:
+    app: artist-mariadb
+type: Opaque
+data:
+  mariadb-root-password: YzI1ODIwNWY2YmFhYzAzMGZmMzQ1NjBjYjA3ODA3NGY0Yjc5MWFiNjQ1YzMwZWViY2ViNTI2NDJlY2Q1
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: artist-mariadb
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: artist-mariadb
+  template:
+    metadata:
+      labels:
+        app: artist-mariadb
+    spec:
+      volumes:
+        - name: data
+          emptyDir: {}
+      containers:
+        - name: mariadb
+          image: mariadb:10.8.3
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: artist-mariadb
+                  key: mariadb-root-password
+            - name: MYSQL_DATABASE
+              value: artist
+          args:
+            - --lower_case_table_names=1
+            - --skip-ssl
+            - --character_set_server=utf8mb4
+            - --explicit_defaults_for_timestamp
+          ports:
+            - containerPort: 3306
+          volumeMounts:
+            - name: data
+              mountPath: /var/lib/mysql/
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "500m"
+            limits:
+              memory: "1Gi"
+              cpu: "1"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: artist-mariadb
+  namespace: default
+spec:
+  selector:
+    app: artist-mariadb
+  ports:
+    - port: 3306
