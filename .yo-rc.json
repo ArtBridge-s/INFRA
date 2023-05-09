@@ -1,8 +1,8 @@
 {
   "generator-jhipster": {
-    "appsFolders": ["Gateway"],
+    "appsFolders": ["Artist", "Artwork", "Gateway"],
     "clusteredDbApps": {},
-    "directoryPath": "C:\\Users\\ur2ku\\OneDrive\\바탕 화면\\WORKSPACE\\[ShareIn]workspace\\artbridge/",
+    "directoryPath": "C:\\Users\\ur2ku\\OneDrive\\바탕 화면\\WORKSPACE\\artbridge/",
     "dockerPushCommand": "docker push",
     "dockerRepositoryName": "gcr.io/artbridge",
     "ingressDomain": "",
