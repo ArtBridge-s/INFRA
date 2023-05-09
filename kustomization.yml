@@ -3,6 +3,12 @@ commonLabels:
 
 resources:
   # Individual apps
+  - artist-k8s/artist-deployment.yml
+  - artist-k8s/artist-service.yml
+  - artist-k8s/artist-mariadb.yml
+  - artwork-k8s/artwork-deployment.yml
+  - artwork-k8s/artwork-service.yml
+  - artwork-k8s/artwork-mariadb.yml
   - gateway-k8s/gateway-deployment.yml
   - gateway-k8s/gateway-service.yml
   - gateway-k8s/gateway-mariadb.yml
