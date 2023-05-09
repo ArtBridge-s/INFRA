@@ -2,8 +2,14 @@ apiVersion: skaffold/v1
 kind: Config
 build:
   artifacts:
+    - image: gcr.io/artbridge/artist
+#      context:
+      jib: {}
+    - image: gcr.io/artbridge/artwork
+#      context:
+      jib: {}
     - image: gcr.io/artbridge/gateway
-      context: C:\Users\ur2ku\OneDrive\바탕 화면\WORKSPACE\[ShareIn]workspace\artbridge/Gateway
+#      context:
       jib: {}
   tagPolicy:
     envTemplate:
