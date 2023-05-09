@@ -5,6 +5,10 @@
 You will need to push your image to a registry. If you have not done so, use the following commands to tag and push the images:
 
 ```
+$ docker image tag artist gcr.io/artbridge/artist
+$ docker push gcr.io/artbridge/artist
+$ docker image tag artwork gcr.io/artbridge/artwork
+$ docker push gcr.io/artbridge/artwork
 $ docker image tag gateway gcr.io/artbridge/gateway
 $ docker push gcr.io/artbridge/gateway
 ```
