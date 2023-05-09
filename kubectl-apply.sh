@@ -26,8 +26,9 @@ default() {
     suffix=k8s
     kubectl apply -f registry-${suffix}/
     kubectl apply -f messagebroker-${suffix}/
+    kubectl apply -f artist-${suffix}/
+    kubectl apply -f artwork-${suffix}/
     kubectl apply -f gateway-${suffix}/
-
 }
 
 kustomize() {
