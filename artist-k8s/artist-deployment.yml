@@ -46,7 +46,7 @@ spec:
               done
       containers:
         - name: artist-app
-          image: gcr.io/artbridge/artist
+          image: imkunyoung/a-artist:latest
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: prod
