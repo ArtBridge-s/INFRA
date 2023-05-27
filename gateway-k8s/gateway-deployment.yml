@@ -46,10 +46,10 @@ spec:
               done
       containers:
         - name: gateway-app
-          image: gcr.io/artbridge/gateway
+          image: imkunyoung/a-gateway:latest
           env:
             - name: SPRING_PROFILES_ACTIVE
-              value: prod
+              value: prod,api-docs
             - name: SPRING_CLOUD_CONFIG_URI
               value: http://admin:${jhipster.registry.password}@jhipster-registry.default.svc.cluster.local:8761/config
             - name: JHIPSTER_REGISTRY_PASSWORD
@@ -86,6 +86,8 @@ spec:
               value: "org.apache.kafka.common.serialization.StringDeserializer"
             - name: KAFKA_PRODUCER_VALUE_DESERIALIZER
               value: "org.apache.kafka.common.serialization.StringDeserializer"
+            - name: MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED
+              value: "true"
             - name: SPRING_SLEUTH_PROPAGATION_KEYS
               value: "x-request-id,x-ot-span-context"
             - name: JAVA_OPTS
@@ -101,16 +103,16 @@ spec:
               cpu: "1"
           ports:
             - name: http
-              containerPort: 8000
-#          readinessProbe:
-#            httpGet:
-#              path: /management/health/readiness
-#              port: http
-#            initialDelaySeconds: 20
-#            periodSeconds: 15
-#            failureThreshold: 6
-#          livenessProbe:
-#            httpGet:
-#              path: /management/health/liveness
-#              port: http
-#            initialDelaySeconds: 120
+              containerPort: 80
+          readinessProbe:
+            httpGet:
+              path: /management/health/readiness
+              port: http
+            initialDelaySeconds: 20
+            periodSeconds: 15
+            failureThreshold: 6
+          livenessProbe:
+            httpGet:
+              path: /management/health/liveness
+              port: http
+            initialDelaySeconds: 120

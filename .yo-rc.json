@@ -4,7 +4,7 @@
     "clusteredDbApps": {},
     "directoryPath": "C:\\Users\\ur2ku\\OneDrive\\바탕 화면\\WORKSPACE\\artbridge/",
     "dockerPushCommand": "docker push",
-    "dockerRepositoryName": "gcr.io/artbridge",
+    "dockerRepositoryName": "us-central1-docker.pkg.dev/artbridge/artbridge",
     "ingressDomain": "",
     "istio": false,
     "jwtSecretKey": "OWUzN2E4YmE2NWI5YmNhOTM5MGE5MmZhN2YwNzY5ZDhjYzFkN2VjMmVjNGIwY2E1MmVhZGM3YWUwYzRmM2Y1NjhiOWRiYzBiZjZlNGMyMDcyYTdmMzViY2QwNzQzOGI2YjcwNQ==",
@@ -12,7 +12,7 @@
     "kubernetesServiceType": "LoadBalancer",
     "kubernetesStorageClassName": "",
     "kubernetesUseDynamicStorage": false,
-    "monitoring": "no",
+    "monitoring": "prometheus",
     "serviceDiscoveryType": "eureka"
   }
 }

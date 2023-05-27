@@ -6,14 +6,22 @@ resources:
   - artist-k8s/artist-deployment.yml
   - artist-k8s/artist-service.yml
   - artist-k8s/artist-mariadb.yml
+  - artist-k8s/artist-prometheus-sm.yml
   - artwork-k8s/artwork-deployment.yml
   - artwork-k8s/artwork-service.yml
   - artwork-k8s/artwork-mariadb.yml
+  - artwork-k8s/artwork-prometheus-sm.yml
   - gateway-k8s/gateway-deployment.yml
   - gateway-k8s/gateway-service.yml
   - gateway-k8s/gateway-mariadb.yml
+  - gateway-k8s/gateway-prometheus-sm.yml
   # messagebroker
   - messagebroker-k8s/kafka.yml
+  # monitoring prometheus
+  - monitoring-k8s/jhipster-prometheus-cr.yml
+  - monitoring-k8s/jhipster-prometheus-crd.yml
+  - monitoring-k8s/jhipster-grafana.yml
+  - monitoring-k8s/jhipster-grafana-dashboard.yml
   # service discovery eureka/consul
   - registry-k8s/jhipster-registry.yml
   - registry-k8s/application-configmap.yml

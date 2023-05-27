@@ -7,7 +7,7 @@ metadata:
     app: artist-mariadb
 type: Opaque
 data:
-  mariadb-root-password: YzI1ODIwNWY2YmFhYzAzMGZmMzQ1NjBjYjA3ODA3NGY0Yjc5MWFiNjQ1YzMwZWViY2ViNTI2NDJlY2Q1
+  mariadb-root-password: NjRmMjgzYWIyMzljOGY2OGUzY2Y0NTlmY2IzMjZhNjE5ZTY1ZjRmOTU1MzQzYmI4ODQ5YmJhZjZmMDlk
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -38,11 +38,12 @@ spec:
                   key: mariadb-root-password
             - name: MYSQL_DATABASE
               value: artist
-          args:
-            - --lower_case_table_names=1
-            - --skip-ssl
-            - --character_set_server=utf8mb4
-            - --explicit_defaults_for_timestamp
+          #        command:
+          #        - mysqld
+          #        - --lower_case_table_names=1
+          #        - --skip-ssl
+          #        - --character_set_server=utf8mb4
+          #        - --explicit_defaults_for_timestamp
           ports:
             - containerPort: 3306
           volumeMounts:

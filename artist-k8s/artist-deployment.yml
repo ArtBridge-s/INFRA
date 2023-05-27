@@ -49,7 +49,7 @@ spec:
           image: imkunyoung/a-artist:latest
           env:
             - name: SPRING_PROFILES_ACTIVE
-              value: prod
+              value: dev,api-docs
             - name: SPRING_CLOUD_CONFIG_URI
               value: http://admin:${jhipster.registry.password}@jhipster-registry.default.svc.cluster.local:8761/config
             - name: JHIPSTER_REGISTRY_PASSWORD
@@ -61,8 +61,8 @@ spec:
               value: http://admin:${jhipster.registry.password}@jhipster-registry.default.svc.cluster.local:8761/eureka/
             - name: SPRING_DATASOURCE_URL
               value: jdbc:mariadb://artist-mariadb.default.svc.cluster.local:3306/artist?useLegacyDatetimeCode=false&serverTimezone=UTC
-            - name: SPRING_LIQUIBASE_URL
-              value: jdbc:mariadb://artist-mariadb.default.svc.cluster.local:3306/artist?useLegacyDatetimeCode=false&serverTimezone=UTC
+#            - name: SPRING_LIQUIBASE_URL
+#              value: jdbc:mariadb://artist-mariadb.default.svc.cluster.local:3306/artist?useLegacyDatetimeCode=false&serverTimezone=UTC
             - name: SPRING_DATASOURCE_PASSWORD
               valueFrom:
                 secretKeyRef:
@@ -84,6 +84,8 @@ spec:
               value: "org.apache.kafka.common.serialization.StringDeserializer"
             - name: KAFKA_PRODUCER_VALUE_DESERIALIZER
               value: "org.apache.kafka.common.serialization.StringDeserializer"
+            - name: MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED
+              value: "true"
             - name: SPRING_SLEUTH_PROPAGATION_KEYS
               value: "x-request-id,x-ot-span-context"
             - name: JAVA_OPTS
@@ -99,7 +101,7 @@ spec:
               cpu: "1"
           ports:
             - name: http
-              containerPort: 8001
+              containerPort: 8081
 #          readinessProbe:
 #            httpGet:
 #              path: /management/health/readiness

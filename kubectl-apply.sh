@@ -20,15 +20,28 @@ exit 0
 
 logSummary() {
     echo ""
+        echo "#####################################################"
+        echo "Please find the below useful endpoints,"
+        echo "JHipster Grafana - http://jhipster-grafana.default."
+        echo "#####################################################"
 }
 
 default() {
     suffix=k8s
     kubectl apply -f registry-${suffix}/
-    kubectl apply -f messagebroker-${suffix}/
     kubectl apply -f artist-${suffix}/
     kubectl apply -f artwork-${suffix}/
     kubectl apply -f gateway-${suffix}/
+    kubectl apply -f messagebroker-${suffix}/
+    kubectl apply -f monitoring-${suffix}/jhipster-prometheus-crd.yml
+    until [ $(kubectl get crd prometheuses.monitoring.coreos.com 2>>/dev/null | wc -l) -ge 2 ]; do
+        echo "Waiting for the custom resource prometheus operator to get initialised";
+        sleep 5;
+    done
+    kubectl apply -f monitoring-${suffix}/jhipster-prometheus-cr.yml
+    kubectl apply -f monitoring-${suffix}/jhipster-grafana.yml
+    kubectl apply -f monitoring-${suffix}/jhipster-grafana-dashboard.yml
+
 }
 
 kustomize() {
