@@ -46,7 +46,7 @@ spec:
               done
       containers:
         - name: artwork-app
-          image: docker.io/imkunyoung/artwork
+          image: docker.io/imkunyoung/a-artwork
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: prod
