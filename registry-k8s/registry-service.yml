@@ -8,6 +8,7 @@ metadata:
 spec:
   selector:
     app: jhipster-registry
+    type: LoadBalancer
   ports:
     - name: http
       port: 8761

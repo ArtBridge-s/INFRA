@@ -5,12 +5,12 @@
 You will need to push your image to a registry. If you have not done so, use the following commands to tag and push the images:
 
 ```
-$ docker image tag artist us-central1-docker.pkg.dev/artbridge/artbridge/artist
-$ docker push us-central1-docker.pkg.dev/artbridge/artbridge/artist
-$ docker image tag artwork us-central1-docker.pkg.dev/artbridge/artbridge/artwork
-$ docker push us-central1-docker.pkg.dev/artbridge/artbridge/artwork
-$ docker image tag gateway us-central1-docker.pkg.dev/artbridge/artbridge/gateway
-$ docker push us-central1-docker.pkg.dev/artbridge/artbridge/gateway
+$ docker image tag artist docker.io/imkunyoung/artist
+$ docker push docker.io/imkunyoung/artist
+$ docker image tag artwork docker.io/imkunyoung/artwork
+$ docker push docker.io/imkunyoung/artwork
+$ docker image tag gateway docker.io/imkunyoung/gateway
+$ docker push docker.io/imkunyoung/gateway
 ```
 
 ## Deployment

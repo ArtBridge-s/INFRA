@@ -21,6 +21,8 @@ spec:
     metadata:
       labels:
         app: jhipster-grafana
+      annotations:
+        sidecar.istio.io/inject: "false"
     spec:
       containers:
         - name: jhipster-grafana
@@ -69,7 +71,7 @@ spec:
     - name: http
       port: 3000
       targetPort: 3000
-  type: LoadBalancer
+  type:
   selector:
     app: jhipster-grafana
 ---

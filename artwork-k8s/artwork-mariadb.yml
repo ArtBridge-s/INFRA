@@ -7,7 +7,7 @@ metadata:
     app: artwork-mariadb
 type: Opaque
 data:
-  mariadb-root-password: NjRmMjgzYWIyMzljOGY2OGUzY2Y0NTlmY2IzMjZhNjE5ZTY1ZjRmOTU1MzQzYmI4ODQ5YmJhZjZmMDlk
+  mariadb-root-password: NjcyNmRhYzBjODgxMmVjY2I3OTk5NjQ3N2ViZTZjZjQ3ZTdhMjY0NTQ4MWMxZDZlNDk3MmY1YjY0YTZm
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -23,6 +23,8 @@ spec:
     metadata:
       labels:
         app: artwork-mariadb
+      annotations:
+        sidecar.istio.io/inject: "false"
     spec:
       volumes:
         - name: data

@@ -1,12 +1,12 @@
 {
   "generator-jhipster": {
-    "appsFolders": ["Artist", "Artwork", "Gateway"],
+    "appsFolders": ["Artist", "Artwork", "Auth"],
     "clusteredDbApps": {},
     "directoryPath": "C:\\Users\\ur2ku\\OneDrive\\바탕 화면\\WORKSPACE\\artbridge/",
     "dockerPushCommand": "docker push",
-    "dockerRepositoryName": "us-central1-docker.pkg.dev/artbridge/artbridge",
-    "ingressDomain": "",
-    "istio": false,
+    "dockerRepositoryName": "docker.io/imkunyoung",
+    "ingressDomain": "artbridge-server.store",
+    "istio": true,
     "jwtSecretKey": "OWUzN2E4YmE2NWI5YmNhOTM5MGE5MmZhN2YwNzY5ZDhjYzFkN2VjMmVjNGIwY2E1MmVhZGM3YWUwYzRmM2Y1NjhiOWRiYzBiZjZlNGMyMDcyYTdmMzViY2QwNzQzOGI2YjcwNQ==",
     "kubernetesNamespace": "default",
     "kubernetesServiceType": "LoadBalancer",

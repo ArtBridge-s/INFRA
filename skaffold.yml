@@ -2,14 +2,14 @@ apiVersion: skaffold/v1
 kind: Config
 build:
   artifacts:
-    - image: us-central1-docker.pkg.dev/artbridge/artbridge/artist
+    - image: docker.io/imkunyoung/artist
       context: C:\Users\ur2ku\OneDrive\바탕 화면\WORKSPACE\artbridge/Artist
       jib: {}
-    - image: us-central1-docker.pkg.dev/artbridge/artbridge/artwork
+    - image: docker.io/imkunyoung/artwork
       context: C:\Users\ur2ku\OneDrive\바탕 화면\WORKSPACE\artbridge/Artwork
       jib: {}
-    - image: us-central1-docker.pkg.dev/artbridge/artbridge/gateway
-      context: C:\Users\ur2ku\OneDrive\바탕 화면\WORKSPACE\artbridge/Gateway
+    - image: docker.io/imkunyoung/gateway
+      context: C:\Users\ur2ku\OneDrive\바탕 화면\WORKSPACE\artbridge/Auth
       jib: {}
   tagPolicy:
     envTemplate:
