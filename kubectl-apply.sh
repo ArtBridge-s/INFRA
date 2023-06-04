@@ -22,14 +22,13 @@ logSummary() {
     echo ""
         echo "#####################################################"
         echo "Please find the below useful endpoints,"
-        echo "JHipster Grafana - http://jhipster-grafana.default.artbridge-server.store"
+        echo "JHipster Grafana - http://jhipster-grafana.default."
         echo "#####################################################"
 }
 
 default() {
     suffix=k8s
     kubectl apply -f registry-${suffix}/
-    kubectl label namespace default istio-injection=enabled --overwrite=true
     kubectl apply -f artist-${suffix}/
     kubectl apply -f artwork-${suffix}/
     kubectl apply -f gateway-${suffix}/

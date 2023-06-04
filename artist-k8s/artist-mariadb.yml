@@ -7,7 +7,7 @@ metadata:
     app: artist-mariadb
 type: Opaque
 data:
-  mariadb-root-password: NjcyNmRhYzBjODgxMmVjY2I3OTk5NjQ3N2ViZTZjZjQ3ZTdhMjY0NTQ4MWMxZDZlNDk3MmY1YjY0YTZm
+  mariadb-root-password: NDE1YjY0MzQyM2UwMGRkNDM0MTY1ODM3MjVkMDE1MDc1ZWQ2ZjdkYjlmMDJkMjg1MzBiODFhZmZiZGM4
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -23,8 +23,6 @@ spec:
     metadata:
       labels:
         app: artist-mariadb
-      annotations:
-        sidecar.istio.io/inject: "false"
     spec:
       volumes:
         - name: data

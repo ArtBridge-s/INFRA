@@ -10,4 +10,4 @@ spec:
     app: artwork
   ports:
     - name: http
-      port: 8082
+      port: 8002

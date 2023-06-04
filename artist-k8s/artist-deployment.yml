@@ -59,10 +59,6 @@ spec:
                   key: registry-admin-password
             - name: EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE
               value: http://admin:${jhipster.registry.password}@jhipster-registry.default.svc.cluster.local:8761/eureka/
-            - name: EUREKA_INSTANCE_PREFER_IP_ADDRESS
-              value: "false"
-            - name: EUREKA_INSTANCE_HOSTNAME
-              value: artist
             - name: SPRING_DATASOURCE_URL
               value: jdbc:mariadb://artist-mariadb.default.svc.cluster.local:3306/artist?useLegacyDatetimeCode=false&serverTimezone=UTC
 #            - name: SPRING_LIQUIBASE_URL
