@@ -49,7 +49,7 @@ spec:
           image: docker.io/imkunyoung/a-artwork
           env:
             - name: SPRING_PROFILES_ACTIVE
-              value: dev
+              value: prod
             - name: SPRING_CLOUD_CONFIG_URI
               value: http://admin:${jhipster.registry.password}@jhipster-registry.default.svc.cluster.local:8761/config
             - name: JHIPSTER_REGISTRY_PASSWORD
@@ -59,31 +59,15 @@ spec:
                   key: registry-admin-password
             - name: EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE
               value: http://admin:${jhipster.registry.password}@jhipster-registry.default.svc.cluster.local:8761/eureka/
-            - name: SPRING_DATASOURCE_URL
-              value: jdbc:mariadb://artwork-mariadb.default.svc.cluster.local:3306/artwork?useLegacyDatetimeCode=false&serverTimezone=UTC
+#            - name: SPRING_DATASOURCE_URL
+#              value: jdbc:mariadb://artwork-mariadb.default.svc.cluster.local:3306/artwork?useLegacyDatetimeCode=false&serverTimezone=UTC
 #            - name: SPRING_LIQUIBASE_URL
 #              value: jdbc:mariadb://artwork-mariadb.default.svc.cluster.local:3306/artwork?useLegacyDatetimeCode=false&serverTimezone=UTC
-            - name: SPRING_DATASOURCE_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: artwork-mariadb
-                  key: mariadb-root-password
-            - name: KAFKA_CONSUMER_KEY_DESERIALIZER
-              value: "org.apache.kafka.common.serialization.StringDeserializer"
-            - name: KAFKA_CONSUMER_VALUE_DESERIALIZER
-              value: "org.apache.kafka.common.serialization.StringDeserializer"
-            - name: KAFKA_CONSUMER_BOOTSTRAP_SERVERS
-              value: "jhipster-kafka.default.svc.cluster.local:9092"
-            - name: KAFKA_CONSUMER_GROUP_ID
-              value: "artwork"
-            - name: KAFKA_CONSUMER_AUTO_OFFSET_RESET
-              value: "earliest"
-            - name: KAFKA_PRODUCER_BOOTSTRAP_SERVERS
-              value: "jhipster-kafka.default.svc.cluster.local:9092"
-            - name: KAFKA_PRODUCER_KEY_DESERIALIZER
-              value: "org.apache.kafka.common.serialization.StringDeserializer"
-            - name: KAFKA_PRODUCER_VALUE_DESERIALIZER
-              value: "org.apache.kafka.common.serialization.StringDeserializer"
+#            - name: SPRING_DATASOURCE_PASSWORD
+#              valueFrom:
+#                secretKeyRef:
+#                  name: artwork-mariadb
+#                  key: mariadb-root-password
             - name: MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED
               value: "true"
             - name: SPRING_SLEUTH_PROPAGATION_KEYS
@@ -101,7 +85,7 @@ spec:
               cpu: "1"
           ports:
             - name: http
-              containerPort: 8002
+              containerPort: 8082
           readinessProbe:
             httpGet:
               path: /management/health/readiness

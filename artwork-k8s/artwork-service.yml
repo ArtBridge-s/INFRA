@@ -8,6 +8,7 @@ metadata:
 spec:
   selector:
     app: artwork
+  type: LoadBalancer
   ports:
     - name: http
       port: 8002
