@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: exhibition
+  namespace: default
+  labels:
+    app: exhibition
+spec:
+  selector:
+    app: exhibition
+  type: LoadBalancer
+  ports:
+    - name: http
+      port: 8003
