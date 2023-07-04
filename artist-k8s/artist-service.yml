@@ -8,6 +8,7 @@ metadata:
 spec:
   selector:
     app: artist
+  type: LoadBalancer
   ports:
     - name: http
-      port: 8081
+      port: 8001
