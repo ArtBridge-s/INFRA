@@ -5,12 +5,14 @@
 You will need to push your image to a registry. If you have not done so, use the following commands to tag and push the images:
 
 ```
-$ docker image tag artist docker.io/imkunyoung/artist
-$ docker push docker.io/imkunyoung/artist
-$ docker image tag artwork docker.io/imkunyoung/artwork
-$ docker push docker.io/imkunyoung/artwork
-$ docker image tag gateway docker.io/imkunyoung/gateway
-$ docker push docker.io/imkunyoung/gateway
+$ docker image tag artist docker.io/imkunyoung/a-artist
+$ docker push docker.io/imkunyoung/a-artist
+$ docker image tag artwork docker.io/imkunyoung/a-artwork
+$ docker push docker.io/imkunyoung/a-artwork
+$ docker image tag gateway docker.io/imkunyoung/a-gateway
+$ docker push docker.io/imkunyoung/a-gateway
+$ docker image tag exhibition docker.io/imkunyoung/a-exhibition
+$ docker push docker.io/imkunyoung/a-exhibition
 ```
 
 ## Deployment
