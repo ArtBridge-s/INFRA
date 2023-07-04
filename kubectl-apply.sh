@@ -32,6 +32,7 @@ default() {
     kubectl apply -f artist-${suffix}/
     kubectl apply -f artwork-${suffix}/
     kubectl apply -f gateway-${suffix}/
+    kubectl apply -f exhibition-${suffix}/
     kubectl apply -f messagebroker-${suffix}/
     kubectl apply -f monitoring-${suffix}/jhipster-prometheus-crd.yml
     until [ $(kubectl get crd prometheuses.monitoring.coreos.com 2>>/dev/null | wc -l) -ge 2 ]; do
