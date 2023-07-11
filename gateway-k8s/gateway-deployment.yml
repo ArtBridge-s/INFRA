@@ -52,6 +52,8 @@ spec:
               value: prod
             - name: SPRING_CLOUD_CONFIG_URI
               value: http://admin:${jhipster.registry.password}@jhipster-registry.default.svc.cluster.local:8761/config
+            - name: SERVER_PORT
+              value: 8000
             - name: JHIPSTER_REGISTRY_PASSWORD
               valueFrom:
                 secretKeyRef:
